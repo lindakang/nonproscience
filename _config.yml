@@ -1,48 +1,96 @@
 # Welcome to Jekyll!
-# 這是您的主設定檔
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# --- 網站基本資訊 ---
-title: "Non-Pro Science" # 或是您想取的網站名稱
-description: >-
-  Sharing science for non-pros.
-baseurl: "/nonproscience" # 這是正確的，不要改
-url: "https://lindakang.github.io" # 這是您的 GitHub Pages 主網域
-
-# --- 主題設定 ---
-remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: default # 您可以改為 air, contrast, dark 等
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: MM
+email:
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/nonproscience"
+twitter_username: username
+github_username: username
+minimal_mistakes_skin: default
 search: true
 
-# --- 作者資訊 (截圖左側邊欄) ---
-author:
-  name: "Linda Kang" # 替換成您的名字
-  avatar: "/assets/images/bio-photo.jpg" # 如果您有照片，請上傳到此路徑
-  bio: "Just another science enthusiast." # 您的簡介
-  location: "Taiwan" # 您的地點
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/lindakang"
-    # 您可以自行新增其他連結
-
-# --- 關鍵：設定 Collection (為了做出截圖中的 docs 效果) ---
-collections:
-  docs:
-    output: true
-    permalink: /:collection/:path/
-
-# --- 建置設定 ---
+# Build settings
 markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+include:
+  - _pages
+  - _data
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
 
-# --- 預設版型設定 ---
+author:
+  name   : "First Lastname"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "My awesome biography constrained to a sentence or two goes here."
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/"
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/"
+
 defaults:
-  # 一般文章
+  # _posts
   - scope:
       path: ""
       type: posts
@@ -53,15 +101,7 @@ defaults:
       comments: true
       share: true
       related: true
-  # Collection 文件 (截圖中的那些教學文)
-  - scope:
-      path: ""
-      type: docs
-    values:
-      layout: single
-      author_profile: true
-      share: true
-  # 頁面
+  # _pages
   - scope:
       path: "_pages"
       type: pages
