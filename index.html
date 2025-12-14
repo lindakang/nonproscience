@@ -457,7 +457,7 @@
                         <a class="nav-link" onclick="showPage('research')">Fun Research</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="showPage('biotech-companies')">Biotech/Pharma Analysis</a>
+                        <a class="nav-link" onclick="showPage('biotech-companies')">Biotech/Pharma Company</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="showPage('Experiment')">Wet Lab</a>
@@ -473,7 +473,7 @@
         </aside>
 
         <main class="main-content">
-            <div id="home" class="page active">
+            <div class="page active" id="home">
                 <header class="page-header">
                     <h1 class="page-title">Welcome to Inside Science</h1>
                     <p class="page-description">Wandering in life sciences....</p>
@@ -489,73 +489,73 @@
                 </div>
 
                 <div class="intro-section">
-                    <h2>內容分類</h2>
-                    <p><strong>業界新聞：</strong>生技醫藥產業的最新動態與重要消息</p>
-                    <p><strong>研究發現：</strong>有趣的科學研究與學術發現</p>
-                    <p><strong>生技藥廠公司文：</strong>重要企業的深度分析與介紹</p>
-                    <p><strong>職涯相關：</strong>職業發展、轉職經驗與職場心得分享</p>
-                    <p><strong>生活閒聊：</strong>工作之餘的生活分享與心得</p>
-                    <p><strong>Data Analysis：</strong>資料分析相關的專案與筆記</p>
+                    <h2>Category</h2>
+                    <p><strong>Industry News:</strong> Biotech & Pharma news</p>
+                    <p><strong>Fun Research</strong> Latest research finding, it could be preclinical studies or animal behavioural studies. </p>
+                    <p><strong>Biotech/Pharma Company</strong> Analysis of companies that I am interested in.</p>
+                    <p><strong>Wet Lab:</strong> Sharing something happened in the lab</p>
+                    <p><strong>Random Thoughts:</strong> Some life murmur</p>
+                    <p><strong>Data Analysis:</strong> Using R to do some analysis outside science</p>
                 </div>
             </div>
 
-            <div id="industry-news" class="page">
+            <div class="page" id="industry-news">
                 <header class="page-header">
-                    <h1 class="page-title">業界新聞</h1>
-                    <p class="page-description">生技醫藥產業的最新動態與重要消息</p>
+                    <h1 class="page-title">Industry News</h1>
+                    <p class="page-description">Sharing of biotech / Pharma news</p>
                 </header>
                 <div class="article-grid" id="industry-news-articles">
-                    <div class="loading">載入中...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
 
-            <div id="research" class="page">
+            <div class="page" id="research">
                 <header class="page-header">
-                    <h1 class="page-title">研究發現</h1>
-                    <p class="page-description">有趣的科學研究與學術發現</p>
+                    <h1 class="page-title">Fun Research</h1>
+                    <p class="page-description">Sharing of fun science findings</p>
                 </header>
                 <div class="article-grid" id="research-articles">
-                    <div class="loading">載入中...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
 
-            <div id="biotech-companies" class="page">
+            <div class="page" id="biotech-companies">
                 <header class="page-header">
-                    <h1 class="page-title">生技藥廠公司文</h1>
-                    <p class="page-description">重要企業的深度分析與介紹</p>
+                    <h1 class="page-title">Biotech / Pharma Company</h1>
+                    <p class="page-description">Analysis of biotech and pharmaceutical companies</p>
                 </header>
                 <div class="article-grid" id="biotech-companies-articles">
-                    <div class="loading">載入中...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
 
-            <div id="career" class="page">
+            <div class="page" id="wetlab">
                 <header class="page-header">
-                    <h1 class="page-title">職涯相關</h1>
-                    <p class="page-description">職業發展、轉職經驗與職場心得分享</p>
+                    <h1 class="page-title">Wet Lab</h1>
+                    <p class="page-description">Sharing of something happened in the lab </p>
                 </header>
-                <div class="article-grid" id="career-articles">
+                <div class="article-grid" id="wetlab-articles">
                     <div class="loading">載入中...</div>
                 </div>
             </div>
 
-            <div id="life-chat" class="page">
+            <div class="page" id="life-chat">
                 <header class="page-header">
-                    <h1 class="page-title">生活閒聊</h1>
-                    <p class="page-description">工作之餘的生活分享與心得</p>
+                    <h1 class="page-title">Random Thoughts</h1>
+                    <p class="page-description">Murmur about life...</p>
                 </header>
                 <div class="article-grid" id="life-chat-articles">
-                    <div class="loading">載入中...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
 
-            <div id="data-analysis" class="page">
+            <div class="page" id="data-analysis">
                 <header class="page-header">
                     <h1 class="page-title">Data Analysis</h1>
-                    <p class="page-description">資料分析相關的專案與筆記</p>
+                    <p class="page-description">Learning of using R to do data analysis</p>
                 </header>
                 <div class="article-grid" id="data-analysis-articles">
-                    <div class="loading">載入中...</div>
+                    <div class="loading">Loading...</div>
                 </div>
             </div>
 
@@ -571,14 +571,14 @@
 
                 <div class="article-navigation">
                     <div class="article-tags-section">
-                        <h4>文章標籤</h4>
+                        <h4>Tags</h4>
                         <div class="article-tags" id="article-tags-display"></div>
                     </div>
                     
                     <div class="navigation-buttons">
-                        <button onclick="goBackToCategory()" class="nav-button home" id="back-button">回首頁</button>
-                        <button onclick="navigateArticle('prev')" class="nav-button" id="prev-button">上一篇</button>
-                        <button onclick="navigateArticle('next')" class="nav-button" id="next-button">下一篇</button>
+                        <button onclick="goBackToCategory()" class="nav-button home" id="back-button">Home</button>
+                        <button onclick="navigateArticle('prev')" class="nav-button" id="prev-button">Previous</button>
+                        <button onclick="navigateArticle('next')" class="nav-button" id="next-button">Next</button>
                     </div>
                 </div>
             </div>
@@ -747,11 +747,11 @@
 
         function getCategoryDisplayName(category) {
             const names = {
-                'research': '研究發現',
-                'industry-news': '業界新聞',
-                'biotech-companies': '生技藥廠公司文',
-                'career': '職涯相關',
-                'life-chat': '生活閒聊',
+                'research': 'Fun Research',
+                'industry-news': 'Industry News',
+                'biotech-companies': 'Biotech / Pharma',
+                'wetlab': 'Wet Lab',
+                'life-chat': 'Random Thoughts',
                 'data-analysis': 'Data Analysis'
             };
             return names[category] || category;
