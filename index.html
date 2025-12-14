@@ -577,7 +577,7 @@
                     
                     <div class="navigation-buttons">
                         <button onclick="goBackToCategory()" class="nav-button home" id="back-button">Home</button>
-                        <button onclick="navigateArticle('prev')" class="nav-button" id="prev-button">Previous</button>
+                        <button onclick="navigateArticle('prev')" class="nav-button" id="prev-button">Back</button>
                         <button onclick="navigateArticle('next')" class="nav-button" id="next-button">Next</button>
                     </div>
                 </div>
@@ -694,7 +694,7 @@
                 article.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
             
             const backButton = document.getElementById('back-button');
-            backButton.textContent = `回${getCategoryDisplayName(article.category)}首頁`;
+            backButton.textContent = `Return to ${getCategoryDisplayName(article.category)}`;
             
             const prevButton = document.getElementById('prev-button');
             const nextButton = document.getElementById('next-button');
