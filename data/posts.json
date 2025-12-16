@@ -11,7 +11,18 @@
       "filename": "2025-03-27-korean-microsushi.html"
     }
   ],
-  "industry-news": [  ],
+  "industry-news": [
+    {
+        "id": "2021-10-27-nanobodies-next-gen",
+        "title": "Nanobodies: The Next Generation of Antibody Therapeutics",
+        "date": "2021-06-01",
+        "category": "industry-news",
+        "tags": ["Nanobodies", "Ablynx", "Sanofi", "VHH", "COVID-19"],
+        "summary": "Discovered by accident in camel serum, Nanobodies are a unique class of antibodies. This article explores their structural advantages over IgG, manufacturing benefits, and applications in cancer and COVID-19 treatment.",
+        "readTime": "6 min read",
+        "filename": "2021-10-27-nanobodies-next-gen.html"
+    }
+  ],
   "biotech-companies": [
         {
         "id": "2025-12-14-PeptiDream",
