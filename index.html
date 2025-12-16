@@ -98,7 +98,29 @@
             background-color: #8d9faf;  /* 滑鼠移過去或選取時的背景色 */
             color: white;
         }
+/* Search Box Styles */
+        .search-container {
+            margin-top: 20px;
+            padding: 0 10px; /* 跟選單對齊 */
+        }
 
+        #search-input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #24292f;
+            background-color: #ffffff;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        #search-input:focus {
+            border-color: #0969da;
+            box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+        }
+        
         /* Main Content */
         .main-content {
             flex: 1;
@@ -486,6 +508,11 @@
                     </li>
                 </ul>
             </nav>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search..." onkeyup="handleSearch(event)">
+            </div>
+            
+            <nav>
         </aside>
 
         <main class="main-content">
