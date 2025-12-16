@@ -806,7 +806,64 @@ function getCategoryDisplayName(category) {
     };
     return names[category] || category;
 }
+    function handleSearch(event) {
+            // 當使用者按下 Enter 鍵時才執行搜尋
+            if (event.key === 'Enter') {
+                const query = event.target.value.trim().toLowerCase();
+                if (query) {
+                    performSearch(query);
+                }
+            }
+        }
 
+        function performSearch(query) {
+            // 1. 切換到搜尋結果頁面
+            showPage('search-results');
+            
+            // 2. 收集所有分類的文章到一個陣列中
+            let allArticles = [];
+            Object.values(postsRegistry).forEach(categoryArticles => {
+                allArticles = allArticles.concat(categoryArticles);
+            });
+
+            // 3. 過濾文章 (搜尋標題、摘要、或是標籤)
+            const results = allArticles.filter(article => {
+                const titleMatch = article.title.toLowerCase().includes(query);
+                const summaryMatch = article.summary.toLowerCase().includes(query);
+                // 檢查是否有任何一個 tag 符合
+                const tagsMatch = article.tags.some(tag => tag.toLowerCase().includes(query));
+                
+                return titleMatch || summaryMatch || tagsMatch;
+            });
+
+            // 4. 更新狀態文字
+            const statusText = document.getElementById('search-status');
+            statusText.textContent = `Found ${results.length} result(s) for "${query}"`;
+
+            // 5. 顯示結果
+            const container = document.getElementById('search-articles-grid');
+            
+            if (results.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #656d76; padding: 40px;">No articles found matching your search.</p>';
+                return;
+            }
+
+            // 重用原本的卡片 HTML 生成邏輯
+            container.innerHTML = results.map(article => `
+                <div class="article-card" onclick="loadArticle('${article.id}')">
+                    <h3 class="article-title">${article.title}</h3>
+                    <div class="article-meta">
+                        <span>${article.date}</span>
+                        <span>${getCategoryDisplayName(article.category)}</span>
+                        ${article.readTime ? `<span>${article.readTime}</span>` : ''}
+                    </div>
+                    <p class="article-summary">${article.summary}</p>
+                    <div class="article-tags">
+                        ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
         document.addEventListener('DOMContentLoaded', async function() {
             await loadPostsRegistry();
             showPage('home');
