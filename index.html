@@ -771,7 +771,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 ${article.readTime ? `<span>${article.readTime}</span>` : ''}
             `;
             document.getElementById('article-tags-display').innerHTML = 
-                article.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                /* 加上 onclick */
+                article.tags.map(tag => `<span class="tag" onclick="filterByTag('${tag}', event)">${tag}</span>`).join('');
             
             const backButton = document.getElementById('back-button');
             backButton.textContent = `Return to ${getCategoryDisplayName(article.category)}`;
@@ -914,7 +915,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <p class="article-summary">${article.summary}</p>
                     <div class="article-tags">
-                        ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        ${article.tags.map(tag => `<span class="tag" onclick="filterByTag('${tag}', event)">${tag}</span>`).join('')}
                     </div>
                 </div>
             `).join('');
