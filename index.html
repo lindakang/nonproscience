@@ -733,6 +733,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <p class="article-summary">${article.summary}</p>
                     <div class="article-tags">
+                        /* 記得加上 onclick="filterByTag..." */
                         ${article.tags.map(tag => `<span class="tag" onclick="filterByTag('${tag}', event)">${tag}</span>`).join('')}
                     </div>
                 </div>
