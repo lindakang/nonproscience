@@ -824,17 +824,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         }
 
-    function getCategoryDisplayName(category) {
-        const names = {
-            'research': 'Fun Research',
-            'industry-news': 'Industry News',
-            'biotech-companies': 'Biotech / Pharma',
-            'wetlab': 'Wet Lab',              // <--- 新增這一行
-            'life-chat': 'Random Thoughts',
-            'data-analysis': 'Data Analysis'
-    };
-    return names[category] || category;
-}
+        function getCategoryDisplayName(category) {
+            const names = {
+                'research': 'Fun Research',
+                'industry-news': 'Industry News',
+                'biotech-companies': 'Biotech / Pharma',
+                'wetlab': 'Wet Lab',              // <--- 新增這一行
+                'life-chat': 'Random Thoughts',
+                'data-analysis': 'Data Analysis'
+        };
+        return names[category] || category;
+    }
     function handleSearch(event) {
             // 當使用者按下 Enter 鍵時才執行搜尋
             if (event.key === 'Enter') {
@@ -845,24 +845,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         }
     function filterByTag(tagName, event) {
-            // 1. 阻止事件冒泡 (Stop Propagation)
-            // 這是最重要的一步！因為你的標籤放在卡片裡面，
-            // 卡片本身有點擊會打開文章的功能 (onclick="loadArticle...")。
-            // 如果不加這一行，點標籤時會同時觸發搜尋和打開文章，造成錯誤。
+            // 1. 阻止點擊事件冒泡 (避免打開文章)
             if (event) {
                 event.stopPropagation();
             }
 
-            // 2. 把標籤文字填入搜尋框，讓使用者知道現在正在搜尋這個標籤
+            // 2. 執行搜尋 (這會先顯示 "Found X results..." 的預設文字)
+            performSearch(tagName.toLowerCase());
+
+            // 3. 【關鍵修改】在這裡把文字強制改成 "tag: ..." 格式
+            const statusText = document.getElementById('search-status');
+            if (statusText) {
+                statusText.textContent = `tag: ${tagName}`;
+                // 如果想要讓 "tag:" 也是灰色的，或是想要特殊樣式，可以在這裡加 CSS
+                // statusText.style.color = '#555'; 
+            }
+
+            // 4. 更新搜尋框文字 (讓搜尋框顯示這個 tag)
             const searchInput = document.getElementById('search-input');
             if (searchInput) {
                 searchInput.value = tagName;
             }
 
-            // 3. 直接呼叫你之前寫好的搜尋功能
-            performSearch(tagName.toLowerCase());
-            
-            // 4. (選用) 讓畫面自動捲動到最上方
+            // 5. 捲動到頂部
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         function performSearch(query) {
