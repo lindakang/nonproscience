@@ -74,7 +74,7 @@
       "date": "2022-11-05",
       "category": "data-analysis",
       "tags": ["YouTube", "R", "data analysis"],
-      "summary": "這是 YouTube 數據分析系列文章的索引頁面，介紹了專案的動機、使用的資料集，並提供了系列中其他分析文章的連結。",
+      "summary": "This is the index page for the YouTube Data Analytics series. It introduces the motivation behind the project, details the dataset used, and provides links to the other analysis articles in the series.",
       "readTime": "3 min read",
       "filename": "2022-11-05-youtube-index.html"
     },
