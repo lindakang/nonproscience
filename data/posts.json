@@ -43,16 +43,6 @@
         "filename": "2024-09-30-antibody-drug-applications.html"
     },
     {
-      "id": "2025-12-13-menopause-vms-treatments",
-      "title": "Menopause VMS and the Era of Non-Hormonal Treatments",
-      "date": "2025-12-13",
-      "category": "industry-news",
-      "tags": ["Menopause", "VMS", "KNDy Neurons", "Neurokinin B (NKB)", "Fezolinetant", "Elinzanetant", "Menopausal Hormone Therapy"],
-      "summary": "An overview of the pathophysiology of menopausal vasomotor symptoms (VMS), the role of KNDy neurons, and the latest non-hormonal treatments including Fezolinetant and the newly approved Elinzanetant.",
-      "readTime": "6 min read",
-      "filename": "2025-12-13-menopause-vms-treatments.html"
-    },
-    {
       "id": "2026-01-13-JPM-2026-dealmaking-forecast",
       "title": "2026 JPM: Biopharma Deal-Making Forecast: Trends in M&A, AI, and Innovation",
       "date": "2026-01-13",
@@ -95,7 +85,18 @@
       "filename": "2025-06-30-eli-lilly-overview"
     }
   ],
-  "career": [],
+  "diseases": [
+        {
+      "id": "2025-12-13-menopause-vms-treatments",
+      "title": "Menopause VMS and the Era of Non-Hormonal Treatments",
+      "date": "2025-12-13",
+      "category": "industry-news",
+      "tags": ["Menopause", "VMS", "KNDy Neurons", "Neurokinin B (NKB)", "Fezolinetant", "Elinzanetant", "Menopausal Hormone Therapy"],
+      "summary": "An overview of the pathophysiology of menopausal vasomotor symptoms (VMS), the role of KNDy neurons, and the latest non-hormonal treatments including Fezolinetant and the newly approved Elinzanetant.",
+      "readTime": "6 min read",
+      "filename": "2025-12-13-menopause-vms-treatments.html"
+    },
+  ],
   "life-chat": [],
   "data-analysis": [
     {
