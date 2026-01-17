@@ -97,7 +97,18 @@
       "filename": "2025-12-13-menopause-vms-treatments.html"
     }
   ],
-  "wet-lab": [],
+  "wet-lab": [
+    {
+      "id": "2026-01-16-agar-vs-agarose",
+      "title": "Agar vs. Agarose: Are they interchangeable?",
+      "date": "2026-01-16",
+      "category": "wet-lab",
+      "tags": ["Agar", "Agarose", "Molecular Biology", "Electrophoresis"],
+      "summary": "We use both in the lab, but do you know the chemical difference? A look at composition, cost, and why we don't use agar for DNA gels (usually), plus some funny lab anecdotes.",
+      "readTime": "5 min read",
+      "filename": "2026-01-16-agar-vs-agarose.html"
+    }
+  ],
   "data-analysis": [
     {
       "id": "2022-11-05-youtube-index",
